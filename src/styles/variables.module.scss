@@ -1,0 +1,12 @@
+$primary-color: #64ff00;
+
+.title__header {
+  font-size: 10rem;
+}
+.heading {
+  font-weight: 900;
+}
+
+:export {
+  primaryColor: $primary-color;
+}

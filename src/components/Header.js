@@ -9,6 +9,7 @@ const navigation = [
   { name: 'Đời sống', href: '#' },
   { name: 'Thể thao', href: '#' },
   { name: 'Văn hoá', href: '#' },
+  { name: 'About us', href: '/about' },
 ]
 
 export default function Header() {

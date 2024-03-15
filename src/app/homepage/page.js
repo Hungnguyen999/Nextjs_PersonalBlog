@@ -8,7 +8,6 @@ const HomePage = () => {
   return (
     <DefaultLayout>
       <Post />
-      <Link href="/about">Go to About Page</Link>
     </DefaultLayout>
   );
 };
