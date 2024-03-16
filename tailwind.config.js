@@ -90,6 +90,9 @@ module.exports = {
         '128': '32rem',
         '144': '36rem',
       },
+      colors: {
+        'white': 'white',
+      },
       borderRadius: {
         'none': '0',
         'sm': '.125rem',

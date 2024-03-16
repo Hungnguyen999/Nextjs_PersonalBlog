@@ -31,11 +31,13 @@ export default function Page({ params }) {
             <rect width="100%" height="100%" strokeWidth={0} fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
           </svg>
         </div>
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-          <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:items-start lg:gap-y-10">
+          <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-8xl lg:gap-x-8 lg:px-8">
             <div className="lg:pr-4">
-              <div className="lg:max-w-lg">
+              <div className="lg:max-w-2xl">
+                <p className="text-base font-semibold leading-7 text-indigo-600">Date: 22/12/2024</p>
                 <p className="text-base font-semibold leading-7 text-indigo-600">Tác giả: Chống Đức Anh</p>
+                <p className="text-base font-semibold leading-7 text-indigo-600">16 comments</p>
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"> A better workflow </h1>
                 <p className="mt-6 text-xl leading-8 text-gray-700">
                   Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam
@@ -46,6 +48,11 @@ export default function Page({ params }) {
           </div>
           <div className="-ml-10 -mt-10 p-10 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
             <img
+              className="w-[35rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[35rem] p-5"
+              src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+              alt=""
+            />
+            {/* <img
               className="w-[30rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[30rem] p-5"
               src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
               alt=""
@@ -54,17 +61,12 @@ export default function Page({ params }) {
               className="w-[30rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[30rem] p-5"
               src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
               alt=""
-            />
-            <img
-              className="w-[30rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[30rem] p-5"
-              src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-              alt=""
-            />
+            /> */}
           </div>
 
-          <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+          <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-8xl lg:gap-x-8 lg:px-8">
             <div className="lg:pr-4">
-              <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+              <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-2xl">
                 <p>
                   Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
                   vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
