@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // Lưu ý khi sử dụng dispatch:
 // CHỈ SỬ DỤNG được nó trong component con và component cha được đặt
 // trong <Provide store={store}></Provider>
@@ -7,28 +7,39 @@ import React, { useState } from 'react';
 // được đặt trong <Provider>
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "@/store/actions/authAction";
+import { useRouter } from 'next/navigation'
+import FailureDialog from './FailureDialog';
 
 
 const AuthenticateForm = () => {
   const dispatch = useDispatch();
-  const message = useSelector((state) => state.auth.user.message)
+  const router = useRouter();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const loginFailed = useSelector(state => state.auth.error);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  // Redirect to '/about' page when user is logged in
+  useEffect(() => {
+    if (isLoggedIn) {
+      router.push('/');
+    }
+  }, [isLoggedIn, router]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const respone = dispatch(login({ username, password }));
-      console.table("hello" + respone)
-      alert(message);
+      console.log("handle login " + username + " " + password);
+      await dispatch(login({ username, password }));
     } catch (error) {
       console.error('Login error:', error.message);
     }
   }
   return (
-    <>
+    <div>
+      {loginFailed && <FailureDialog children={loginFailed} />}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <a href="/" className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto"
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -37,13 +48,13 @@ const AuthenticateForm = () => {
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
-        </div>
+        </a>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST" onSubmit={handleLogin}>
+          <form className="space-y-6" onSubmit={handleLogin}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
+                User name
               </label>
               <div className="mt-2">
                 <input
@@ -90,13 +101,13 @@ const AuthenticateForm = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-              Start a 14 day free trial
+            <a href="/register" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              Register here
             </a>
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 export default AuthenticateForm;
