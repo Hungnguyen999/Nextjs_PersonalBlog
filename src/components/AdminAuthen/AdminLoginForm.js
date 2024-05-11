@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "@/store/actions/authAction"
+import useTokenValidation from "@/store/utils/userTokenValidation";
 
 import FailureDialog from '@/components/FailureDialog';
 
@@ -17,6 +18,7 @@ const AdminLoginForm = () => {
 
   // Redirect to '/about' page when user is logged in
   useEffect(() => {
+    // MUST: DISPATCH TO LOGOUT SUCCESS, IF DONT IT WILL RE-RENDER TO DASHBOARD EVERY TIME
     if (isLoggedIn) {
       router.push('/admin/dashboard');
     }
@@ -33,7 +35,7 @@ const AdminLoginForm = () => {
   }
   return (
     < div className="container mx-auto" >
-      {loginFailed && <FailureDialog children={loginFailed} />}
+      {loginFailed && <FailureDialog children={loginFailed} message={"Đăng nhập không thành công ! Vui lòng đăng nhập lại"} />}
       <div className="flex justify-center px-6 my-12">
         <div className="w-full xl:w-3/4 lg:w-11/12 flex">
           <div

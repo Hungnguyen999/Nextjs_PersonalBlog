@@ -19,7 +19,7 @@ const AuthenticateForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  // Redirect to '/about' page when user is logged in
+  // Redirect to '/' page when user is logged in
   useEffect(() => {
     if (isLoggedIn) {
       router.push('/');
@@ -37,7 +37,7 @@ const AuthenticateForm = () => {
   }
   return (
     <div>
-      {loginFailed && <FailureDialog children={loginFailed} />}
+      {loginFailed && <FailureDialog children={loginFailed} message={"Đăng nhập không thành công ! vui lòng đăng nhập lại"} />}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <a href="/" className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img

@@ -29,7 +29,7 @@ export default function Sidebar() {
               href="#pablo"
               className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             >
-              Notus NextJS
+              LotusCode Blog
             </Link>
           </Link>
           {/* User */}
@@ -57,7 +57,7 @@ export default function Sidebar() {
                       href="#pablo"
                       className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     >
-                      Notus NextJS
+                      LotusCode Blog
                     </p>
                   </Link>
                 </div>
@@ -201,7 +201,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="items-center">
-                <Link href="/auth/login">
+                <Link href="/admin/manage/contributors">
                   <p
                     href="#pablo"
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -213,7 +213,7 @@ export default function Sidebar() {
               </li>
 
               <li className="items-center">
-                <Link href="/auth/register">
+                <Link href="/admin/manage/readers">
                   <p
                     href="#pablo"
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -235,7 +235,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="items-center">
-                <Link href="/landing">
+                <Link href="/admin/manage/categories">
                   <p
                     href="#pablo"
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -247,7 +247,7 @@ export default function Sidebar() {
               </li>
 
               <li className="items-center">
-                <Link href="/profile">
+                <Link href="/admin/manage/posts">
                   <p
                     href="#pablo"
                     className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"

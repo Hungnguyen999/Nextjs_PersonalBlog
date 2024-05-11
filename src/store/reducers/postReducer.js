@@ -3,6 +3,7 @@ const postSlice = createSlice({
   name: "blog_post",
   initialState: {
     post: null,
+    listPost: null, // use for list post at homepage
     loading: true,
     error: null,
   },
@@ -19,6 +20,7 @@ const postSlice = createSlice({
     },
     getAllPostsSuccess: (state, action) => {
       state.post = action.payload;
+      state.listPost = action.payload;
       state.loading = false;
       state.error = null;
     },

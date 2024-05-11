@@ -15,6 +15,7 @@ export default function MapsPage() {
           </div>
         </div>
       </div>
+
     </>
   );
 }
